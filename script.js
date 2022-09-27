@@ -254,12 +254,12 @@ function calculate(){
       data.unitNumber = Number(element1.children.item(4).value)
       data.percentage = Number(element1.children.item(5).value)
     }
-    data.total += data.price * data.amount
-    data.totalCostProduction += Math.ceil(data.price * data.amount / data.timeOfUse)
-    data.totalCostPerUnit = Math.ceil(data.totalCostProduction / data.unitNumber)
-    data.profit = Math.ceil(data.totalCostProduction * data.percentage /100)
-    data.profitPerUnit = Math.ceil(data.profit / data.unitNumber)
-    data.sale = Math.ceil(data.totalCostPerUnit + data.profitPerUnit)
+    data.total += data.price * data.amount || 0
+    data.totalCostProduction += Math.ceil(data.price * data.amount / data.timeOfUse) || 0
+    data.totalCostPerUnit = Math.ceil(data.totalCostProduction / data.unitNumber) || 0
+    data.profit = Math.ceil(data.totalCostProduction * data.percentage /100) || 0
+    data.profitPerUnit = Math.ceil(data.profit / data.unitNumber) || 0
+    data.sale = Math.ceil(data.totalCostPerUnit + data.profitPerUnit) || 0
   }
   const {
     total, 
@@ -276,6 +276,8 @@ function calculate(){
     profitPerUnit,
     sale
   }
+  console.log(data)
+  console.log(result)
   loadResultonDetail(result)
 }
 if(getNameOfLastFileOpened()){
