@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="mainContent">
+    <header id="header">
+      <section id="entity">
+        <a href="" id="app-name">LET'S START</a>
+        
+        <small id="sandsP">AMBULANT BUSINESS SIMULATOR</small>
+      </section>
+      <nav id="navbar">
+        <div>
+          <span id="saveAgain" style="color: gray;" onclick="saveChanges()">Save</span>
+          <span id="saveAs" onclick="saveAs()">Save As</span>
+          <span id="openMenuFiles" onclick="openMenuFiles()">Open Menu Files</span>
+          <span id="newFile" onclick="newFile()">New File</span>
+        </div>
+        <span id="fileOpenedName" >File Opened: Newfile</span>
+      </nav>
+    </header>
+    <section id="generalContent">
+      <div class="contentFlexRow" id="identificationsElements">
+        <p>Name</p>
+        <p>Price</p>
+        <p>Amount</p>
+        <p>time of use</p>
+        <p>unit number</p>
+        <p>percent</p>
+      </div>
+      <section id="AllInputData">
+        <section id="contentInputsOfData1"  class="contentInputsOfData">
+          <input oninput="calculate(); fileHasBeenChanged()" type="text" placeholder="Name product" id="name1">
+          <input oninput="calculate(); fileHasBeenChanged()" type="number" placeholder="Price" id="price1">
+          <input oninput="calculate(); fileHasBeenChanged()" type="number" placeholder="Amount" id="amount1">
+          <input oninput="calculate(); fileHasBeenChanged()" type="number" placeholder="Time of use" id="timeOfUse1">
+          <input oninput="calculate(); fileHasBeenChanged()" type="number" placeholder="Unit number" id="unitNumber1">
+          <input oninput="calculate(); fileHasBeenChanged()" type="number" step="0.5" placeholder="Return percentage" id="percentage1">
+          <button class="btn-add"  id="addFilds" onclick="addFilds(); fileHasBeenChanged()">+</button>
+          <button class="btn-delete"  id="deleteFild">X</button>
+        </section>
+      </section>
+    </section>
+    <footer id="footer">
+      <details id="detailFather">
+        <div class="contentFlexRow say">
+          <p>Total</p>
+          <p>Total Cost</p>
+          <p>Total Cost per unit</p>
+          <p>Return or Gain</p>
+          <p>Gain per unit</p>
+          <p>Sale Price</p>
+        </div>
+        <div id="details"  class="contentInputsOfData">
+          <input type="number" readonly id="total">
+          <input type="number" readonly id="totalCostProduction">
+          <input type="number" readonly id="totalCostPerUnit">
+          <input type="number" readonly id="profit">
+          <input type="number" readonly id="profitForUnit">
+          <input type="number" readonly id="sale">
+        </div>
+      </details>
+    </footer>
+    <section id="contentSaveFile">
+      <div id="saveFile">
+        <button id="close" onclick="closeWindowSaveFile()">X</button>
+        <p>Save File</p>
+        <input type="text" required  placeholder="filename" id="filename">
+        <button id="save" onclick="saveFileAs()">Save</button>
+      </div>
+    </section>
+    <section id="contentOpenFiles">
+      <h1>All Files</h1>
+      <div id="contentAllFiles">
+        <div id="contentBtnDelete"></div>
+        <ul id="AllFiles"></ul>
+      </div>
+      <button id="clearAllFiles" onclick="clearAllfiles()">Clear All</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
