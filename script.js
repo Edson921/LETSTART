@@ -106,7 +106,7 @@ function clearAllfiles(){
 }
 function newFile(){
   removeItemFromLocaStorageByName('lastFileOpened')
-  window.location = 'file:///F:/calculator/index%20copy.html'
+  window.location = 'https://edson921.github.io/LETSTART/'
 }
 function saveAs(){
   getById('contentSaveFile').style = "display:flex"
@@ -242,6 +242,8 @@ function calculate(){
     sale: 0,
 
   }
+  
+    
   const length = getById('AllInputData').children.length
   for(let i = 0; i < length; i++ ){
     const element1 = getById('AllInputData').children.item(i)
