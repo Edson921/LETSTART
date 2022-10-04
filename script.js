@@ -242,8 +242,6 @@ function calculate(){
     sale: 0,
 
   }
-  
-    
   const length = getById('AllInputData').children.length
   for(let i = 0; i < length; i++ ){
     const element1 = getById('AllInputData').children.item(i)
@@ -276,8 +274,6 @@ function calculate(){
     profitPerUnit,
     sale
   }
-  console.log(data)
-  console.log(result)
   loadResultonDetail(result)
 }
 if(getNameOfLastFileOpened()){
